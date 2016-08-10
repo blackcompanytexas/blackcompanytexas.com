@@ -41,13 +41,13 @@
    html,body{	margin:0px;padding:0px;width:100vw;display:flex;align-items:center;justify-content:center;
          	background-color: teal;overflow-x: hidden;}
    /*BEGIN SPLASH SCREEN ANIMATION*/
-     div.splash,h1,h3{animation-duration:6s;animation-iteration-count:1;animation-timing-function:ease-in-out;}
+     div.splash,h1,h2{animation-duration:6s;animation-iteration-count:1;animation-timing-function:ease-in-out;}
      div.splash{width:100vw;position:absolute;left:-9999px;top:0px;bottom:0px;z-index:1;
 		align-items: center;justify-content:center;display:flex;flex-direction:column;
 		color:rgba(255,255,255,0.8);background-color:rgba(0,0,0,0.9);
 		animation-name: splashfade;}
      h1{animation-name:splashshrink;}
-     h3{animation-name:splashgrow;}
+     h2{animation-name:splashgrow;}
      @keyframes splashfade{0%{left:0px;opacity:1;}70%{left:0px;opacity:.9;}100%{left:0px;opacity:0;}}
      @keyframes splashshrink{0%{opacity:0;transform:scale(1.2);}20%{opacity:1;}100%{transform:scale(0.75);opacity:0.2;}}
      @keyframes splashgrow{0%{opacity:0;transform:scale(1);}20%{opacity:1;}100%{transform:scale(2);}}
@@ -62,12 +62,9 @@
  <body>
   <div id="splash" class="splash">
    <h1>Hi, I'm Kyle Chinnock</h1>
-   <h3>This is my index</h3>
+   <h2>This is my index</h2>
   </div>
   <div class="container" itemscope itemtype="http://schema.org/Person">
-   <!-- Font Awesome SVGs may be found (albeit outdated) le here: https://github.com/encharm/Font-Awesome-SVG-PNG/tree/master/white/svg
-        Snapchat SVG uses their official qr generator, but with only the data path filled white (rescaled slightly).
-        PS: Width/Height make much more sense edited to 1x1em -->
    <a itemprop="url" href="https://www.facebook.com/KAChinnock"><svg width="1em" height="1em" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1376 128q119 0 203.5 84.5t84.5 203.5v960q0 119-84.5 203.5t-203.5 84.5h-188v-595h199l30-232h-229v-148q0-56 23.5-84t91.5-28l122-1v-207q-63-9-178-9-136 0-217.5 80t-81.5 226v171h-200v232h200v595h-532q-119 0-203.5-84.5t-84.5-203.5v-960q0-119 84.5-203.5t203.5-84.5h960z" fill="#fff"/></svg></a>
    <a itemprop="url" href="https://www.twitter.com/kyle_chinnock"><svg width="1em" height="1em" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1408 610q-56 25-121 34 68-40 93-117-65 38-134 51-61-66-153-66-87 0-148.5 61.5t-61.5 148.5q0 29 5 48-129-7-242-65t-192-155q-29 50-29 106 0 114 91 175-47-1-100-26v2q0 75 50 133.5t123 72.5q-29 8-51 8-13 0-39-4 21 63 74.5 104t121.5 42q-116 90-261 90-26 0-50-3 148 94 322 94 112 0 210-35.5t168-95 120.5-137 75-162 24.5-168.5q0-18-1-27 63-45 105-109zm256-194v960q0 119-84.5 203.5t-203.5 84.5h-960q-119 0-203.5-84.5t-84.5-203.5v-960q0-119 84.5-203.5t203.5-84.5h960q119 0 203.5 84.5t84.5 203.5z" fill="#fff"/></svg></a>
    <a itemprop="url" href="https://www.instagram.com/kylechinnock/"><svg width="1em" height="1em" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1490 1426v-648h-135q20 63 20 131 0 126-64 232.5t-174 168.5-240 62q-197 0-337-135.5t-140-327.5q0-68 20-131h-141v648q0 26 17.5 43.5t43.5 17.5h1069q25 0 43-17.5t18-43.5zm-284-533q0-124-90.5-211.5t-218.5-87.5q-127 0-217.5 87.5t-90.5 211.5 90.5 211.5 217.5 87.5q128 0 218.5-87.5t90.5-211.5zm284-360v-165q0-28-20-48.5t-49-20.5h-174q-29 0-49 20.5t-20 48.5v165q0 29 20 49t49 20h174q29 0 49-20t20-49zm174-208v1142q0 81-58 139t-139 58h-1142q-81 0-139-58t-58-139v-1142q0-81 58-139t139-58h1142q81 0 139 58t58 139z" fill="#fff"/></svg></a>
@@ -88,19 +85,13 @@
    <a itemprop="url" href="https://www.behance.net/kylechinnoa2c2"><svg width="1em" height="1em" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1376 128q119 0 203.5 84.5t84.5 203.5v960q0 119-84.5 203.5t-203.5 84.5h-960q-119 0-203.5-84.5t-84.5-203.5v-960q0-119 84.5-203.5t203.5-84.5h960zm-749 367h-371v787h382q117 0 197-57.5t80-170.5q0-158-143-200 107-52 107-164 0-57-19.5-96.5t-56.5-60.5-79-29.5-97-8.5zm-22 318h-176v-184h163q119 0 119 90 0 94-106 94zm9 335h-185v-217h189q124 0 124 113 0 104-128 104zm650 32q-68 0-104-38t-36-107h411q1-10 1-30 0-132-74.5-220.5t-203.5-88.5q-128 0-210 86t-82 216q0 135 79 217t213 82q205 0 267-191h-138q-11 34-47.5 54t-75.5 20zm-10-366q113 0 124 122h-254q4-56 39-89t91-33zm-162-266h319v77h-319v-77z" fill="#fff"/></svg></a>
   </div>
   <script>
-    window.onload = function(){
-      doOnce();
-    }
+    window.onload = function(){doOnce();}
     function doOnce() {
       if (document.cookie.replace(/(?:(?:^|.*;\s*)beenHereDoneSplash\s*\=\s*([^;]*).*$)|^.*$/, "$1") !== "true") {
-        document.cookie = "beenHereDoneSplash=true; expires=Fri, 31 Dec 9999 23:59:59 GMT";
-        console.log("I know you now");
-      } else {
+          document.cookie = "beenHereDoneSplash=true; expires=Fri, 31 Dec 9999 23:59:59 GMT";}
+      else {
         var elem = document.getElementById("splash");
-        elem.parentNode.removeChild(elem);
-        console.log("Already met");
-      }
-    }
+        elem.parentNode.removeChild(elem);}}
   </script>
  </body>
 </html>
