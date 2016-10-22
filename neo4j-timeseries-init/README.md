@@ -1,7 +1,0 @@
-# Neo4j Time-series Initialization
-
-The standard method of modelling time-series in graphs is a tree structure. Here we get a ballancing act regarding granularity. In this script I opt to limit granularity to the day, as put forth by others<sup>*</sup>, as per the needs of the side-project this supplimented.
-
-For ease, this runs in your browser. Just enter the creds and your server address and click Go. For further ease, you can run this from my [site](http://kylechinnock.com/), [here](http://kylechinnock.com/neo4j-timeseries-init). Check the code, I don't bite.
-
-<sup>*<sup>This work is based on a [blog](https://www.graphgrid.com/blog/) [post](https://www.graphgrid.com/modeling-time-series-data-with-neo4j/) by [GraphGrid](https://www.graphgrid.com/), which was based on a [blog](http://www.markhneedham.com/blog/) [post](http://www.markhneedham.com/blog/2014/04/19/neo4j-cypher-creating-a-time-tree-down-to-the-day/) by [Mark](http://www.markhneedham.com/blog/) [Needham](https://twitter.com/markhneedham), breaking down one of his [side projects](https://github.com/mneedham/neo4j-meetup), building upon another [blog](http://jexp.de/blog/) [post](http://jexp.de/blog/2014/04/importing-forests-into-neo4j/) by [Michael](https://github.com/jexp) [Hunger](https://twitter.com/mesirii). Both have some really [great](https://github.com/mneedham?tab=repositories) [stuff](https://github.com/jexp?tab=repositories) here on GitHub you should go look through.
