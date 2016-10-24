@@ -1,0 +1,289 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,minimum-scale=1, initial-scale=1">
+  <title>For your consideration</title>
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <style>
+    body {
+      flex-grow: 1;
+      flex-direction: column;
+      margin: 0.5em;
+    }
+    body,body * {
+      display:flex;
+      margin: 0px;
+      padding: 0px;
+      font-family:roboto;
+    }
+    header{
+      align-items: flex-start;
+      flex-direction: column;
+      padding-bottom: 1em!important;
+      border-bottom: rgba(0,0,0,0.35);
+      border-bottom-style:double;
+      margin-bottom: 1em!important;
+    }
+    footer{
+      align-items: flex-end;
+      justify-content: center;
+      flex-direction: column;
+      padding-top: 1em!important;
+      border-top: rgba(0,0,0,0.35);
+      border-top-style:double;
+      margin-top: 1em!important;
+    }
+    h1{
+      font-size: 1.5em;
+      color: rgba(0,0,0,0.35);
+    }
+    h2{
+      font-size: 1.2em;
+      font-weight: normal;
+    }
+    h3{
+      font-size: 1em;
+      font-weight: bold;
+    }
+    h4{
+      font-size: 1em;
+      font-weight: normal;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+      cursor: pointer;
+    }
+    header>div.qr{
+      display:none;
+    }
+    header>div.container, footer>div.container{
+      flex-direction: column;
+      margin: 0 0.5em;
+    }
+    header>div.container#name{
+      flex-grow:1;
+    }
+    footer>div.container{
+      align-items: flex-end;
+    }
+    section{
+      flex-direction: column;
+      flex-grow: 1;
+      margin: 0 0.5em;
+    }
+    div.cols,div.card{
+      flex-direction: column;
+    }
+    div.card{
+      margin: 0.5em;
+    }
+    p{
+      font-size: small;
+      margin-left: 1em;
+    }
+    sup {
+      display: none;
+    }
+    div.card>h3 {
+      color: rgba(0,0,0,0.75);
+    }
+    div.cols:nth-child(2)>div.card>h3{
+      margin-left: 2em;
+    }
+    div.cols:nth-child(2)>div.card>h4{
+      margin-left: 3em;
+    }
+    @media (min-width: 650px) {
+      html{
+        font-size: 1.5vw;
+      }
+      body{
+        margin: 1.5em;
+      }
+      header{
+        align-items: center;
+        flex-direction: row;
+        padding-bottom: 1em!important;
+        border-bottom: rgba(0,0,0,0.35);
+        border-bottom-style:double;
+        margin-bottom: 1em!important;
+      }
+      footer{
+        align-items: center;
+        justify-content: flex-end;
+        flex-direction: row;
+        padding-top: 1em!important;
+        border-top: rgba(0,0,0,0.35);
+        border-top-style:double;
+        margin-top: 1em!important;
+      }
+      header>div.qr{
+        display:flex;
+        width: 4em;
+        margin: 0 0.5em 0 0;
+        height: 4em;
+        background-position: 50% 50%;
+        background-size: contain;
+        background-repeat: no-repeat;
+        -webkit-print-color-adjust: exact;
+        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANwAAADcAQMAAAAhlF3CAAAABlBMVEX///8AAABVwtN+AAAC4klEQVRYhcWYUY6kMAxEjfjgkyNwk+ZiSLTExeAmHCGffKD2vnIyO7sHaBy11EyKljxxuVyOOWu36zXeNm5+2XjNZbGysl3sS2AxGw5t3hP44OXqyjLZYtYlgasP+2gK0W+7ePXDe7ZMfuSBR2HHz9I7IfKXTSUXJNqXjo8cfojWes8Elc8y7OyQRL5Zi/2b7IdBMf4oMH47CXH4efwth6fBtjqSCcEgf5yk/bceBYlqUMRNCEjirGRu5/XKAcf3ZLPztJ6+KVQ4xnv9qWi/B/o+oo3rqVrfEUZ/SyOzQEJEmxHE1ce3hDF4LVX65ICIDilDqf1015kNQeaVk8wBCZEkAm4gkFlixIneE/9DCsiOK1qt3r0GroB1fBkgTzBeZ6XAQYhdBDtpsimglHqvqoMUkVq0cYmfaCcBrJpg0gTV3cskSdNvfT4PqnUon+sZHbWSXwoxl6+BBIStoIuf6M/V1e6gNv+xFLAEk6n1PprmEY/aCk1IAFXr0Ndkm2/5nUFlX6y10BSQLs7njUsNhyFVJLXXKwcUfbtCDxMYlr7jPaINTUgAJcte/GehAHMYMM8D1TpgUx+m8CMPJMafIlgKGFIYJii45uLapOxWC/s4qOZqNVpS+yNSyuf8NVCkdrnPOKzqfpYJEahW/XmwxhXOWBO6ukOUvTU/9DiI8dK4F/MUxmtmQmcLq17z+Two4uDBOmisyq9tzellTaSeB3uPGU8Ee8t4yUHLsEoBMkDUUE7iUC/rNaH7R0XQyj4BbIyPtaitxYWPlPEoKaDsH/ZDrSOudlyD2KlDbbb5abD85HORCZJ5D3nwb4JanV9xFbDIYfAYDkPtKgOsyVGt+yiHwXl5mOMYThPAOjtcManrdlLdIxzGcJQcMC4D2du83ZtIh5rDSAPbpcptcalSxz3NXGkgDqOWFiGS2ttkeSwJtHbhFpeBTH6U/abA/16XPgw2CSR5kzZ33QuST7rIbhngH+Vd60uyG7/fAAAAAElFTkSuQmCC);
+      }
+      section{
+        flex-direction: row;
+      }
+      div.cols{
+        width: 70%;
+        padding: 0 1.5em;
+      }
+      div.cols:nth-child(2){
+        border-left: rgba(0,0,0,0.15);
+        border-left-style: double;
+        width:30%;
+      }
+      div.cols:nth-child(2)>div.card>h3{
+        margin-left: 1em;
+      }
+      div.cols:nth-child(2)>div.card>h4{
+        margin-left: 1.5em;
+      }
+      sup {
+        display: flex;
+      }
+    }
+    @media print and (width: 8.5in) and (height: 11in) {
+          @page {
+              margin: 0.5in;
+          }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div id="name" class="container">
+      <h1>Kyle Chinnock</h1>
+      <h4>Contemporary Full-stack Developer</h4>
+      <!-- I craft UIs for AIs tought APIs -->
+    </div>
+    <div class="qr"></div>
+    <div id="contact" class="container">
+      <h4><a href="tel:619-889-3083">619-889-3083</a></h4>
+      <h4><a href="mailto:kylechinnock@gmail.com">kylechinnock@gmail.com</a></h4>
+      <h4><a href="http://kylechinnock.com">kylechinnock.com</a></h4>
+    </div>
+  </header>
+  <section>
+    <div class="cols">
+      <h1>Experience</h1>
+      <div class="card">
+        <h2>Owner - Chinnock Enterprises</h2>
+        <h3>2012 - Present (4 years)</h3>
+        <p>The DBA for my ongoing side-project. I do web-app design and development, scripting, administration, support,
+        recovery, electronics repairs, and on-site installs (home-wide audio, cams, hdmi, ethernet, security, automation, etc).</p>
+      </div>
+      <div class="card">
+        <h2>Sales - Digitell Cellular<sup>(ref-1)</sup></h2>
+        <h3>April 2015 - September 2015 (6 months)</h3>
+        <p>I enjoy the intensity, intimacy, and immediacy of personal sales. Digitell offered every avenue for success:
+        tools for getting people in, getting them happy, and bringing them back for more. The company structure
+        had pleasantly low resistance and rampant talent scouting, allowing motivated individuals to exert maximum
+        benefit within their competencies (and grow these areas) in short time.</p>
+      </div>
+      <div class="card">
+        <h2>Partner - Native Paint and Drywall<sup>(ref-3)</sup></h2>
+        <h3>January 2014 - May 2014 (5 months)</h3>
+        <p>I guided this startup into maturity, tackling partnerships, CRM, legal filings, infrastructure, and SEO/web-presence.</p>
+      </div>
+      <div class="card">
+        <h2>AppleCare iOS</h2>
+        <h3>April 2013 - December 2013 (9 months)</h3>
+        <p>I provided technical support for Apple products and services, ballancing
+        several metrics and inventing upsells along the way.</p>
+      </div>
+      <div class="card">
+        <h2>Sales - Digitell Cellular<sup>(ref-1)</sup></h2>
+        <h3>June 2011 - March 2013 (1 year 10 months)</h3>
+        <p>This was a great expirience and my first taste of sales. I was technically proficient in a market of emerging
+        tech (remember smartphones five years ago) and at one of the least 'techie' demographies in the company.
+        And so, I began collecting and evolving strategies for "earning the right," scope, guidance, and redirection,
+        which have matured quite well to date.</p>
+      </div>
+      <div class="card">
+        <h2>Preschool Teacher - Lasting Impressions<sup>(ref-2)</sup></h2>
+        <h3>May 2005 - December 2010 (5 years 8 months)</h3>
+        <p>This was one of the most rewarding and stressful jobs I've ever had. It was also a challenging immersion into
+        applied psychology with highly valuable takeaways.</p>
+      </div>
+      <h1>Education</h1>
+      <div class="card">
+        <h2>Catalina Foothills High School</h2>
+        <h3>2004-2007</h3>
+        <h4>High School Diploma, Media & Technology</h4>
+        <h4>Activities and Societies: Media, Theatre Productions, IT</h4>
+      </div>
+  </div>
+  <div class="cols">
+    <h1>Skills & Expertise</h1>
+      <div class="card">
+      <h2>Microsoft Administration</h2>
+          <h3>Server 03,08,12</h3>
+        <h2>Linux Administration</h2>
+          <h3>RHEL 5,6,7</h3>
+          <h3>Debian</h3>
+          <h3>Gentoo</h3>
+        <h2>Network Administration</h2>
+          <h3>CCNA level understanding</h3>
+        <h2>Database Administration</h2>
+          <h3>mySQL/MariaDB</h3>
+          <h3>Neo4j/Cypher</h3>
+          <h3>MongoDB</h3>
+        <h2>Web Languages</2>
+          <h3>JavaScript</h3>
+            <h4>ES5</h4>
+            <h4>ES6</h4>
+            <h4>jQuery</h4>
+            <h4>Node/V8</h4>
+          <h3>HTML 5</h3>
+          <h3>CSS 3</h3>
+        <h2>Hardware Components</h2>
+          <h3>Diagnostics</h3>
+          <h3>Circuit Theory</h3>
+          <h3>Repair and Reflow</h3>
+        <h2>Android</h2>
+          <h3>Electron Apps</h3>
+          <h3>Android Development Bridge</h3>
+        <h2>Scripting</h2>
+          <h3>Perl</h3>
+          <h3>Bash</h3>
+          <h3>Python</h3>
+          <h3>Batch</h3>
+          <h3>Ruby</h3>
+        <h2>Leadership<sup>(ref-1,3)</sup></h2>
+          <h3>Teambuilding</h3>
+          <h3>Management</h3>
+          <h3>Deligation</h3>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <div id="name" class="container">
+      <h1>References</h1>
+    </div>
+    <div id="contact" class="container">
+      <h3><sup>(ref-1)</sup>Daniel Bellizzi</h3>
+      <h4>Supervisor</h4>
+      <h4><a href="tel:520-343-8343">520-343-8343</a></h4>
+    </div>
+    <div id="contact" class="container">
+      <h3><sup>(ref-2)</sup>Ronald Spector</h3>
+      <h4>Supervisor</h4>
+      <h4><a href="tel:520-326-7834">520-326-7834</a></h4>
+    </div>
+    <div id="contact" class="container">
+      <h3><sup>(ref-4)</sup><a href="http://codepen.io/kylechinnock/">Codepen&nbsp</a> & <a href="https://github.com/kylechinnock">&nbsp;Github</a></h3>
+      <h4>Sample code for review</h4>
+      <h4>via my <a href="http://kylechinnock.com">&nbsp;website</a>.</h4>
+    </div>
+  </footer>
+</body>
+</html>
